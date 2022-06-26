@@ -6,7 +6,9 @@ function Start-NsFullOpenSSL {
 	
 	begin {
 		
-		New-Variable -Name 'OpenSSLsvc' -Scope Local
+		New-Variable -Name 'sshdSvc' -Scope Local
+		New-Variable -Name 'sshAuthSvc' -Scope Local
+		New-Variable -Name 'sshProcess' -Scope Local
 		New-Variable -Name 'OpenSSLdir' -Scope Local
 		
 		
