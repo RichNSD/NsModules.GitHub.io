@@ -1,1 +1,1 @@
-# New-Spectrum-Modules
+# New Spectrum Modules
