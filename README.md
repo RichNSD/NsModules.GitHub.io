@@ -2,19 +2,17 @@
 
 This page is being edited off-site and will be available (to a limited extent, at least) shortly.
 
-Thank you for your patience unlikely random stranger who stumbled upon my repo, we hope to see you again soon. :heart:
-
+Thank you for your patience unlikely random stranger who stumbled upon my repo, we hope to see you again soon. ❤️
 
 <br >
-
 -----
 <br >
 
 <!-- Begin Page Content -->
 
-Welcome to the official site for New Spectrum's PowerShell Module Packages, hosted by GitHub Page. Because GitHub Pages builds sites out of the actual Repos/Projects they are connected to (for more information, see the [GitHub Pages](https://pages github.com)), this site will include all of the amazing content on the GitHub Repo, but *fancier* (and eventually, with added :sparkles:magical:sparkles: features).
+Welcome to the official site for New Spectrum's PowerShell Module Packages, hosted by GitHub Page. Because GitHub Pages builds sites out of the actual Repos/Projects they are connected to (for more information, see the [GitHub Pages](https://pages github.com)), this site will include all of the amazing content on the GitHub Repo, but *fancier* (and eventually, with added ✨magical✨ features).
 
-## *Very* Under Construction
+## Currently *Very* Under Construction
 
 This site, and the repo itself, are fresh out of the oven, so pretty much everything is still cooling off (under construction). Content will be made available as it's developed, for the time being. __This means...__
 
