@@ -1,6 +1,8 @@
 function New-Template {
 
+<# Specifies a path to one or more locations.
 
+Unlike the 'Path' parameter, the value of the 'LiteralPath' parameter is used EXACTLY as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, they must be enclosed single quotation ' marks (aka, apostr). Single quotation marks tell Windows PowerShell not to interpret any characters as escape sequences. #>
 	param (
 		[Parameter(Mandatory=$false,
 				   Position=0,

@@ -1,8 +1,8 @@
 :: Declare Variables
 @echo OFF
-	set sshDir=C:\Program Files\OpenSSH
+	set sshDir=C:\Program Files\OpenSSH\OpenSSH-Win64
 	set hostSsh=%ProgramData%\ssh
-	set SshKeygen=C:\Program Files\OpenSSH\ssh-keygen.exe
+	set SshKeygen=C:\Program Files\OpenSSH\OpenSSH-Win64\ssh-keygen.exe
 
 
 cd %sshDir%
