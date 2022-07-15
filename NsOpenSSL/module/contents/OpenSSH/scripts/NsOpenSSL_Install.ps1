@@ -17,6 +17,7 @@ function Get-NsOpenSSH {
 		[string[]]$DownloadDir
 	)
 	
+	fun
 
 	begin {
 
@@ -27,12 +28,48 @@ function Get-NsOpenSSH {
 	}
 
 
-	process {
+	process { # For some reason VS Code thinks I'm breakibng the sacred rules of the 'process' block
 
-		Invoke-WebRequest -Uri "$OpenSSHgit" -OutFile "$HOME\Downloads\OpenSSH.zip" -Verbose -PassThru 
+		# This needs to be SIGNIFICANTLY more complicated (conditions, , error checking, etc)
+		Invoke-WebRequest -Uri "$OpenSSHgit" -OutFile "$HOME\Downloads\OpenSSH.zip" -Verbose -PassThru
 
 	}
-	
+
+
+	end {
+
+		Get-ChildItem -Path <## I only put Get-ChildItem here so VS Code wouldn't yell at me for leaving an empty end block or some bullshit #>
+
+	}
+
+
+
+<#
+
+.SYNOPSIS
+	A short one-line action-based description, e.g. 'Tests if a function is valid'
+
+
+.DESCRIPTION
+	A longer description of the function, its purpose, common use cases, etc.
+
+
+.NOTES
+	Information or caveats about the function e.g. 'This function is not supported in Linux'
+
+
+.LINK
+	Specify a URI to a help page, this will show when Get-Help -Online is used.
+
+
+.EXAMPLE
+	Test-MyTestFunction -Verbose
+	Explanation of the function or its result. You can include multiple examples with additional .EXAMPLE lines
+
+#>
+
+{0}
+
 }
 
 
