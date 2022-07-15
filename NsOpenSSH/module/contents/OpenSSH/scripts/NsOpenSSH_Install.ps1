@@ -17,7 +17,7 @@ function Get-NsOpenSSH {
 		[string[]]$DownloadDir
 	)
 	
-	fun
+	func
 
 	begin {
 

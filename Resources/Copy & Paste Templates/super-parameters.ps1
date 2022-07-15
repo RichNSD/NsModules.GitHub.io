@@ -13,7 +13,8 @@ Unlike the 'Path' parameter, the value of the 'LiteralPath' parameter is used EX
 		[string[]]$LiteralPath
 	)
 
-	# Specifies a path to one or more locations. Wildcards are permitted.
+	
+# Specifies a path to one or more locations. Wildcards are permitted.
 	param (
 		[Parameter(Mandatory=$false,
 				   Position=0,
