@@ -1,0 +1,4 @@
+#!pwsh
+
+Write-Host "This is 'PowerShell Remote Notebooks Test #1.\n"
+Write-Host "Notebook Format: .dib"
