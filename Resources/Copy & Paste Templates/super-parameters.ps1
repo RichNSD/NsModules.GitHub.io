@@ -28,6 +28,15 @@ Unlike the 'Path' parameter, the value of the 'LiteralPath' parameter is used EX
 	)
 
 
+	@{
+		Name      = 'Pancales'
+		Mandatory = $true
+		Type      = [string]
+	}
+
+	
+
+
 
 
 
