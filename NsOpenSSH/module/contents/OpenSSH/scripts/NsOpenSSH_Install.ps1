@@ -36,6 +36,8 @@ function Get-NsOpenSSH {
 			New-Variable -Name 'OpenSshDir' -Value "C:\Program Files\OpenSSH" -Scope 'Local' -ErrorAction 'Stop' -Description "The primary working driectory for the OpenSSH client, located in 'Program Files'." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
 
 			New-Variable -Name 'HostSshData' -Value "$HOME\.ssh" -Scope 'Local' -ErrorAction 'Stop' -Description "Variable Description." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
+
+			New-Variable -Name 'HostSshData' -Value "$HOME\.ssh" -Scope 'Global' -Visibility 'Public' -ErrorAction 'Stop' -Description "Variable Description." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru -Force -PipelineVariable -VarPipe
 			
 			
 
