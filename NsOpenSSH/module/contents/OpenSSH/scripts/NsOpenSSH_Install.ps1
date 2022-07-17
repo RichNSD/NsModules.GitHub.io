@@ -20,14 +20,23 @@ function Get-NsOpenSSH {
 	
 	begin {
 
-		$WarningPreference="SilentlyContinue"
-		$ErrorView="CategoryView"
+		# SESSION SETTINGS
+			$WarningPreference="SilentlyContinue"
+			$ErrorView="CategoryView"
+	
+			# Execution Policy
+			Get-ExecutionPolicy -OutVariable OutVar
+				$OriginalExecPolicy="$OutVar"
 
-		
-		
+				if ($OriginalExecPolicy != 'Unrestricted') {
+					
+					Set-ExecutionPolicy -ExecutionPolicy 'Bypass' -Scope 'Process' -Force -WarningVariable +PrepWarnings -ErrorAction '__' -ErrorVariable +PrepErrors -InfoVariable +PrepInfo
+				}
 		
 
 		# VARIABLES
+			Test-Path "$HOME"
+		
 			New-Variable -Name 'OpenSSHgit' -Value "https://github.com/PowerShell/Win32-OpenSSH/releases/download/v8.9.0.0p1-Beta/OpenSSH-Win64.zip" -Scope 'Local' -ErrorAction 'Stop' -Description "The download URL for the OpenSSH client, hosted by GitHub." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
 
 			New-Variable -Name 'scriptStage' -Value "$C:\.stage" -Scope 'Local' -ErrorAction 'Stop' -Description "This hidden, temporary folder is (as the name suggests) is meant to provide a space in which files and directories can be organized, modified, etc. As the script completes, the folder will be removed- so if you (if 'you' are the user) find it, just delete it." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
@@ -37,7 +46,7 @@ function Get-NsOpenSSH {
 
 			New-Variable -Name 'HostSshData' -Value "$HOME\.ssh" -Scope 'Local' -ErrorAction 'Stop' -Description "Variable Description." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
 
-			New-Variable -Name 'HostSshData' -Value "$HOME\.ssh" -Scope 'Global' -Visibility 'Public' -ErrorAction 'Stop' -Description "Variable Description." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru -Force -PipelineVariable -VarPipe
+			New-Variable -Name 'name' -Value "path" -Scope 'Global' -Visibility 'Public' -ErrorAction 'Stop' -Description "Variable Description." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru -Force -PipelineVariable -VarPipe
 			
 			
 
