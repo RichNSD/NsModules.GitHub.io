@@ -20,42 +20,7 @@ function Get-NsOpenSSH {
 	
 	begin {
 
-		# SESSION SETTINGS
-			$WarningPreference="SilentlyContinue"
-			$ErrorView="CategoryView"
-	
-			try {
-				Get-ExecutionPolicy -OutVariable OutVar
-				$OriginalExecPolicy="$OutVar"
-					if ($OriginalExecPolicy /= 'Unrestricted') {
-						Set-ExecutionPolicy -ExecutionPolicy 'Bypass' -Scope 'Process' -Force -WarningVariable +PrepWarnings -ErrorAction 'SilentlyContinue' -ErrorVariable +PrepErrors -InfoVariable +PrepInfo
-					}
-			}
-			catch [System.UnauthorizedAccessException],[Microsoft.PowerShell.Commands.SetExecutionPolicyCommand] {
-				Write-Host "`n`e[1;93m[ERROR]`e[0m`e[1;97m Unable to modify the `e[96mExecution Policy`e[0m`n"
-				Write-Host "`e[97mPlease close this window and run this script again in an `e[1;96mAdministrative PowerShell Terminal`e[0m.`n"
-			}
-			
-			
-		
-
-		# VARIABLES
-			Test-Path "$HOME"
-		
-			New-Variable -Name 'OpenSSHgit' -Value "https://github.com/PowerShell/Win32-OpenSSH/releases/download/v8.9.0.0p1-Beta/OpenSSH-Win64.zip" -Scope 'Local' -ErrorAction 'Stop' -Description "The download URL for the OpenSSH client, hosted by GitHub." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
-
-			New-Variable -Name 'scriptStage' -Value "C:\.stage" -Scope 'Local' -ErrorAction 'Stop' -Description "This hidden, temporary folder is (as the name suggests) is meant to provide a space in which files and directories can be organized, modified, etc. As the script completes, the folder will be removed- so if you (if 'you' are the user) find it, just delete it." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
-				# After this directory is created, a 'README.txt' document with the same content as the above description needs to be created with it in the event this (or any of our other scripts) winds up failing before the directory is removed.
-			
-			New-Variable -Name 'OpenSshDir' -Value "C:\Program Files\OpenSSH" -Scope 'Local' -ErrorAction 'Stop' -Description "The primary working driectory for the OpenSSH client, located in 'Program Files'." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
-
-			New-Variable -Name 'HostSshData' -Value "$HOME\.ssh" -Scope 'Local' -ErrorAction 'Stop' -Description "Variable Description." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
-
-			New-Variable -Name 'name' -Value "path" -Scope 'Global' -Visibility 'Public' -ErrorAction 'Stop' -Description "Variable Description." -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru -Force -PipelineVariable -VarPipe
-			
-			
-
-
+		# Prep
 
 	}
 
@@ -64,7 +29,7 @@ function Get-NsOpenSSH {
 
 		Invoke-WebRequest -Uri "$OpenSSHgit" -OutFile "$HOME\Downloads\OpenSSH.zip" -Verbose -PassThru
 
-		New-Item -ItemType Directory -Path "$scriptStage" -Force -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar
+		Set-Item -ItemType Directory -Path "$scriptStage" -Force -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar
 		Expand-Archive -LiteralPath "$Home\Downloads\OpenSSH.zip" -DestinationPath "$sciptStage\OpenSSH-Stage" -WarningVariable +NsWarningVar -ErrorVariable +NsErrorVar -InformationVariable +NsInfoVar -PassThru
 
 
