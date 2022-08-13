@@ -3,8 +3,7 @@ function Get-NsOpenSSH {
 	[CmdletBinding()]
 	param (
 		[Parameter()]
-		[TypeName]
-		$ParameterName
+		[TypeName]$ParameterName
 	)
 
 	param (
@@ -20,12 +19,14 @@ function Get-NsOpenSSH {
 	
 	begin {
 
-		# Prep
+	<#
+	TODO 	Function Prep
+	#>
 
 	}
 
 
-	process { # For some reason VS Code thinks I'm breakibng the sacred rules of the 'process' block
+	process { # For some reason VS Code thinks I'm breaking the sacred rules of the 'process' block
 
 		Invoke-WebRequest -Uri "$OpenSSHgit" -OutFile "$HOME\Downloads\OpenSSH.zip" -Verbose -PassThru
 
@@ -45,7 +46,7 @@ function Get-NsOpenSSH {
 
 	}
 
-
+}
 
 <#
 
